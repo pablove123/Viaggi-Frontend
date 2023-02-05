@@ -20,6 +20,7 @@ import * as authService from './services/authService'
 // styles
 import './App.css'
 import NewExperience from './pages/NewExperience/NewExperience'
+import Itinerary from './pages/Itinerary/Itinerary'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -79,7 +80,15 @@ const App = () => {
               <NewExperience />
             </ProtectedRoute>
           }
-        />
+        />        
+        <Route
+        path="/itinerary"
+        element={
+          <ProtectedRoute user={user}>
+            <Itinerary />
+          </ProtectedRoute>
+        }
+      />
       </Routes>
     </>
   )
