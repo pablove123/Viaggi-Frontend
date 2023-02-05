@@ -1,6 +1,12 @@
+import ExperienceCard from "../../components/ExperienceCard";
+
 function ExperienceList(props) {
   return (  
-    <h1>This is experience Page</h1>
+    <>
+      <h1>This is an experience Page</h1>
+      <ExperienceCard/>
+    </>
+  
   )
 }
 
