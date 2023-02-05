@@ -8,7 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
-import Experiences from './pages/Experiences/Experiences'
+import ExperienceList from './pages/ExperienceList/ExperienceList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -59,7 +59,7 @@ const App = () => {
           path="/experiences"
           element={
             <ProtectedRoute user={user}>
-              <Experiences />
+              <ExperienceList />
             </ProtectedRoute>
           }
         />
