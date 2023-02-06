@@ -1,12 +1,13 @@
-import ExperienceCard from "../../components/ExperienceCard";
+import styles from './ExperienceList.module.css'
+import ExperienceCard from "../../components/ExperienceCard/ExperienceCard";
 
 function ExperienceList(props) {
   return (  
-    <>
-      <h1>This is an experience Page</h1>
-      <ExperienceCard/>
-    </>
-  
+    <main className={styles.container}>
+      {props.experiences.map((experience) => (
+        <ExperienceCard key={experience._id} experience={experience} />
+      ))}
+    </main>
   )
 }
 
