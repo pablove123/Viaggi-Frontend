@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 
 // page components
@@ -16,6 +16,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as expService from './services/expService'
 
 // styles
 import './App.css'
@@ -25,6 +26,7 @@ import Itinerary from './pages/Itinerary/Itinerary'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [experiences, setExperiences] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -35,6 +37,14 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+  useEffect(() => {
+    const fetchAllExperiences = async () => {
+      const data = await expService.getAllExperiences()
+      setExperiences(data)
+    } 
+    if (user) fetchAllExperiences()
+  }, [user])
 
   return (
     <>
@@ -61,7 +71,7 @@ const App = () => {
           path="/experiences"
           element={
             <ProtectedRoute user={user}>
-              <ExperienceList />
+              <ExperienceList experiences={experiences}/>
             </ProtectedRoute>
           }
         />
