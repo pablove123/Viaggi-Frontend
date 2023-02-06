@@ -47,8 +47,17 @@ const App = () => {
     if (user) fetchAllExperiences()
   }, [user])
 
-  const handleAddExperience = async (experienceData) => {
+  const expPhotoHelper = async (photo, id) => {
+    const photoData = new FormData()
+    photoData.append('photo', photo)
+    return await expService.addPhoto(photoData, id)
+  }
+
+  const handleAddExperience = async (experienceData, photo) => {
     const newExperience = await expService.create(experienceData)
+    if(photo){
+      newExperience.photo = await expPhotoHelper(photo, newExperience._id)
+    }
     setExperiences([newExperience, ...experiences])
     navigate('/experiences')
   }
