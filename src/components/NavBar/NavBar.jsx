@@ -13,7 +13,7 @@ const NavBar = ({ user, handleLogout }) => {
   const protectedLinks = (
     <ul>
       <li><NavLink to="/experiences">All Experiences</NavLink></li>
-      <li><NavLink to="/new-experience">New Experience</NavLink></li>
+      <li><NavLink to="/experiences/new">New Experience</NavLink></li>
       <li><NavLink to="/change-password">Change Password</NavLink></li>
       <li><NavLink to="/profiles">Profiles</NavLink></li>
       <li><NavLink to="/itinerary">Itinerary</NavLink></li>

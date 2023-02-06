@@ -47,6 +47,12 @@ const App = () => {
     if (user) fetchAllExperiences()
   }, [user])
 
+  const handleAddExperience = async (experienceData) => {
+    const newExperience = await expService.create(experienceData)
+    setExperiences([newExperience, ...experiences])
+    navigate('/experiences')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -85,10 +91,10 @@ const App = () => {
           }
         />
         <Route
-          path="/new-experience"
+          path="/experiences/new"
           element={
             <ProtectedRoute user={user}>
-              <NewExperience />
+              <NewExperience handleAddExperience={handleAddExperience} />
             </ProtectedRoute>
           }
         />        
