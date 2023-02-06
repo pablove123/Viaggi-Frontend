@@ -64,13 +64,14 @@ const handleChangePhoto = (evt) => {
           <option value="Restaurant">Restaurant</option>
           <option value="Hotel">Hotel</option>
         </select>
-        <label htmlFor="photo-upload">Upload Photo</label>
-        <input
-          type="file"
-          id="photo-upload"
-          name="photo"
-          onChange={handleChangePhoto}
-        />
+					<label htmlFor="photo-upload">Upload Photo</label>
+					<input
+						type="file"
+						className="form-control"
+						id="photo-upload"
+						name="photo"
+						onChange={handleChangePhoto}
+					/>
         <label htmlFor="description-input">Description</label>
         <textarea
         required
