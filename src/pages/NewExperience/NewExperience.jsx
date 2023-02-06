@@ -4,7 +4,7 @@ import styles from './NewExperience.module.css'
 const NewExperience = (props) => {
   const [form, setForm] = useState({
     name: '',
-    city: '',
+    city: 'Venice',
     photo: '',
     category: '',
     description: '',
