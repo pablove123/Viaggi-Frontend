@@ -22,6 +22,7 @@ import * as expService from './services/expService'
 import './App.css'
 import NewExperience from './pages/NewExperience/NewExperience'
 import Itinerary from './pages/Itinerary/Itinerary'
+import ExperienceDetails from './pages/ExperienceDetails/ExperienceDetails'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -94,11 +95,19 @@ const App = () => {
         <Route
         path="/itinerary"
         element={
-          <ProtectedRoute user={user}>
-            <Itinerary />
-          </ProtectedRoute>
-        }
-      />
+            <ProtectedRoute user={user}>
+              <Itinerary />
+            </ProtectedRoute>
+          }
+        />
+                <Route
+        path="/experiences/:id"
+        element={
+            <ProtectedRoute user={user}>
+              <ExperienceDetails />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   )

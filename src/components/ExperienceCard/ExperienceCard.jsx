@@ -6,9 +6,11 @@ const ExperienceCard = ({experience}) => {
     return (
         <>
             <article className={styles.container}>
-                <header>
-                    {experience.name}
-                </header>
+                <Link to={`/experiences/${experience._id}`}>
+                    <header>
+                        {experience.name}
+                    </header>
+                </Link>
                 <p>{experience.description}</p>
             </article>
         </>
