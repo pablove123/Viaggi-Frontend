@@ -5,7 +5,7 @@ function ExperienceList(props) {
   return (  
     <main className={styles.container}>
       {props.experiences.map((experience) => (
-        <ExperienceCard key={experience._id} experience={experience} />
+          <ExperienceCard key={experience._id} experience={experience} />
       ))}
     </main>
   )
