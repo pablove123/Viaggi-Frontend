@@ -1,24 +1,29 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
+
+  const publicLinks = (
+    <ul>
+      <li><NavLink to="/login">LOG IN</NavLink></li>
+      <li><NavLink to="/signup">SIGN UP</NavLink></li>
+    </ul>
+  )
+
+  const protectedLinks = (
+    <ul>
+      <li><NavLink to="/experiences">All Experiences</NavLink></li>
+      <li><NavLink to="/new-experience">New Experience</NavLink></li>
+      <li><NavLink to="/change-password">Change Password</NavLink></li>
+      <li><NavLink to="/profiles">Profiles</NavLink></li>
+      <li><NavLink to="/itinerary">Itinerary</NavLink></li>
+      <li><NavLink to="/logout" onClick={handleLogout}>LOG OUT</NavLink></li>
+    </ul>
+  )
   return (
-    <nav>
-      {user ?
-        <ul>
-          <li>Welcome, {user.name}</li>
-          <li><Link to="/profiles">Profiles</Link></li>
-          <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-          <li><Link to="/change-password">Change Password</Link></li>
-          <li><Link to="/experiences">All Experiences</Link></li>          
-          <li><Link to="/new-experience">New Experience</Link></li>
-          <li><Link to="/itinerary">Itinerary</Link></li>
-        </ul>
-      :
-        <ul>
-          <li><Link to="/login">Log In</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li>
-        </ul>
-      }
+    <nav className={styles.container}>
+      <NavLink to={'/'}>Home Page</NavLink>
+      {user ? protectedLinks : publicLinks}
     </nav>
   )
 }
