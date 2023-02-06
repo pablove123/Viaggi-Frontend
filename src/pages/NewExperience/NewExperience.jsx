@@ -6,7 +6,7 @@ const NewExperience = (props) => {
     name: '',
     city: 'Venice',
     photo: '',
-    category: '',
+    category: 'Museum',
     description: '',
   })
 
@@ -54,6 +54,7 @@ const handleSubmit = (e) => {
         >
           <option value="Museum">Museum</option>
           <option value="Landmark">Landmark</option>
+          <option value="Attraction">Attraction</option>
           <option value="Restaurant">Restaurant</option>
           <option value="Hotel">Hotel</option>
         </select>
