@@ -36,9 +36,21 @@ const create = async (experienceData) => {
   }
 }
 
+async function addPhoto(photoData, puppyId) {
+  const res = await fetch(`${BASE_URL}/${puppyId}/add-photo`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+    body: photoData
+  })
+	return await res.json()
+}
+
 
 export { 
   getAllExperiences,
   show,
-  create
+  create, 
+  addPhoto
 }

@@ -10,13 +10,19 @@ const NewExperience = (props) => {
     description: '',
   })
 
+  const [photo, setPhoto] = useState({})
+
 const handleChange = ({ target }) => {
   setForm({ ...form, [target.name]: target.value })
 }
 
 const handleSubmit = (e) => {
   e.preventDefault()
-  props.handleAddExperience(form)
+  props.handleAddExperience(form, photo.photo)
+}
+
+const handleChangePhoto = (evt) => {
+  setPhoto({ photo: evt.target.files[0] })
 }
 
   return(
@@ -58,6 +64,14 @@ const handleSubmit = (e) => {
           <option value="Restaurant">Restaurant</option>
           <option value="Hotel">Hotel</option>
         </select>
+					<label htmlFor="photo-upload">Upload Photo</label>
+					<input
+						type="file"
+						className="form-control"
+						id="photo-upload"
+						name="photo"
+						onChange={handleChangePhoto}
+					/>
         <label htmlFor="description-input">Description</label>
         <textarea
         required
