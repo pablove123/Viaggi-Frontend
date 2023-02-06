@@ -22,6 +22,7 @@ const ExperienceDetails = (props) => {
   return (
     <main className={styles.container}>
       <header>
+        <img src={experience.photo} alt="" />
         <h1>{experience.name}</h1>
         <h2>{experience.city}</h2>
         <h3>{experience.category}</h3>
