@@ -28,6 +28,19 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [experiences, setExperiences] = useState([])
+  const [romeExp, setRomeExp] = useState(["test"])
+  const [veniceExp, setVeniceExp] = useState([])
+  const [florenceExp, setFlorenceExp] = useState([])
+
+const addToRome = (experience) => {
+  setRomeExp([...romeExp, experience])
+}
+const addToVenice = (experience) => {
+  setVeniceExp([...veniceExp, experience])
+}
+const addToFlorence = (experience) => {
+  setFlorenceExp([...florenceExp, experience])
+}
 
   const handleLogout = () => {
     authService.logout()
@@ -111,7 +124,7 @@ const App = () => {
         path="/itinerary"
         element={
             <ProtectedRoute user={user}>
-              <Itinerary />
+              <Itinerary romeExp={romeExp} veniceExp={veniceExp} florenceExp={florenceExp}/>
             </ProtectedRoute>
           }
         />
