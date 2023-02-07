@@ -5,7 +5,7 @@ import styles from './NewReview.module.css'
 import Icon from "../Icon/Icon"
 
 const NewReview = (props) => {
-  const [form, setForm] = useState({ text: '' })
+  const [form, setForm] = useState({ content: '' })
 
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
@@ -14,7 +14,7 @@ const NewReview = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     props.handleAddReview(form)
-    setForm({ text: '' })
+    setForm({ content: '' })
   }
 
   return (
