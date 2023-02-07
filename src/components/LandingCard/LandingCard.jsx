@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const LandingCard = (props) => {
   return ( 
     <>
-    <Link to='/experiences'>
+    <Link to={`experiences/${props.cityName}`}>
       <div className={styles.cardContainer}>
         <img src={props.imgsrc} alt={props.alt}/>
         <div className={styles.cardTextDiv}>
