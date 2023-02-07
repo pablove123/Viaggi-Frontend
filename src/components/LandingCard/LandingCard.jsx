@@ -8,7 +8,7 @@ const LandingCard = (props) => {
       <div className={styles.cardContainer}>
         <img src={props.imgsrc} alt={props.alt}/>
         <div className={styles.cardTextDiv}>
-          <h4>{props.cityName}</h4>
+          <h4 className={styles.cityText}>{props.cityName}</h4>
         </div>
       </div>
     </Link>
