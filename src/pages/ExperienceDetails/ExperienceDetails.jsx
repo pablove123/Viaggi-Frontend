@@ -20,6 +20,12 @@ const ExperienceDetails = (props) => {
 
   if (!experience) return <h1>Loading...</h1>
 
+  const handleAddReview = async (reviewData) => {
+    const newReview = await expService.createReview(_id, reviewData)
+    setExperience({...experience, reviews: [...experience.reviews, newReview] })
+  }
+
+
   return (
     <main className={styles.container}>
       <header>
