@@ -36,14 +36,12 @@ const ExperienceDetails = (props) => {
         <h3>{experience.description}</h3>
         <span>
           {experience.author.map((author)=>(
-
-          <AuthorInfo author={author}/>
-          
+          <AuthorInfo key={author._id} author={author}/>
           ))}
-          </span>
-          <h1>Reviews</h1>
-           <NewReview handleAddReview={handleAddReview}/>
-           <Reviews review={experience.review} user={props.user} />
+        </span>
+        <h1>Reviews</h1>
+        <NewReview handleAddReview={handleAddReview}/>
+        <Reviews review={experience.review} user={props.user} />
       </header>
     </main>
   )

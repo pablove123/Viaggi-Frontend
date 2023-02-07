@@ -7,9 +7,7 @@ const ReviewCard = ({ review }) => {
       </header>
       <p>{review.content}</p>
       <p>{review.rating}</p>
-      <p>{review.owner}</p>
-      {/* <h1>Hello</h1> */}
-      {/* <AuthorInfo /> */}
+      <p>{review.author.name}</p>
     </article>
 
         
