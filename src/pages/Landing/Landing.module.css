@@ -8,9 +8,13 @@
 }
 
 .heroDiv {
+  display: flex;
+  flex-direction: column;
   min-width: 100%;
   height: 40%;
   background-image: url('../../assets/branding/background.jpg');
+  justify-content: center;
+  align-items: center;
 }
 
 .landingContainer {
@@ -18,8 +22,6 @@
   flex-wrap: wrap;
   background-color: lightgray;
   height: 60%;
-  align-items: center;
   width: 100%;
   justify-content: center;
-  align-items: center;
 }

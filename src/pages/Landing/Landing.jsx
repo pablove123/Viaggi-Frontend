@@ -10,6 +10,8 @@ const Landing = ({ user }) => {
   return (
     <main className={styles.landingMain}>
       <div className={styles.heroDiv}>
+        <h1>Welcome to Italy</h1>
+        <h3>Where would you like to go?</h3>
       </div>
       <div className={styles.landingContainer}>
         <LandingCard imgsrc={Florence} alt ={'picture of florence'} cityName={'Florence'} />
