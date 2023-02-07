@@ -26,7 +26,6 @@ const ExperienceDetails = (props) => {
     setExperience({...experience, review: [...experience.review, newReview] })
   }
 
-
   return (
     <main className={styles.container}>
       <header>
@@ -45,8 +44,6 @@ const ExperienceDetails = (props) => {
           <h1>Reviews</h1>
            <NewReview handleAddReview={handleAddReview}/>
            <Reviews review={experience.review} user={props.user} />
-        
-
       </header>
     </main>
   )
