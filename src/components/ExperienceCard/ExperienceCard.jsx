@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const ExperienceCard = ({experience}) => {
     return (
         <>
-            <Link to={`/experiences/${experience._id}`}>
+            <Link to={`/experience/${experience._id}`}>
                 <div className={styles.experienceCardContainer}>
                     <img src={experience.photo} alt="experience"/>
                     <div className={styles.experienceCardTextDiv}>
