@@ -29,8 +29,8 @@ const App = () => {
   const navigate = useNavigate()
   const [experiences, setExperiences] = useState([])
   const [romeExp, setRomeExp] = useState(["test"])
-  const [veniceExp, setVeniceExp] = useState([])
-  const [florenceExp, setFlorenceExp] = useState([])
+  const [veniceExp, setVeniceExp] = useState(["test"])
+  const [florenceExp, setFlorenceExp] = useState(["test"])
 
 const addToRome = (experience) => {
   setRomeExp([...romeExp, experience])
