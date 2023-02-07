@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from './ExperienceDetails.module.css'
 import AuthorInfo from "../../components/AuthorInfo/AuthorInfo";
+import NewReview from "../../components/NewReview/NewReview";
+import Reviews from "../../components/Reviews/Reviews";
 
 // Services
 import * as expService from '../../services/expService'
@@ -20,6 +22,11 @@ const ExperienceDetails = (props) => {
 
   if (!experience) return <h1>Loading...</h1>
 
+  const handleAddReview = async (reviewData) => {
+    const newReview = await expService.createReview(id, reviewData)
+    setExperience({...experience, review: [...experience.review, newReview] })
+  }
+
   return (
     <main className={styles.container}>
       <header>
@@ -28,13 +35,15 @@ const ExperienceDetails = (props) => {
         <h2>{experience.city}</h2>
         <h3>{experience.category}</h3>
         <h3>{experience.description}</h3>
-        {console.log(experience)}
         <span>
           {experience.author.map((author)=>(
 
           <AuthorInfo author={author}/>
           ))}
           </span>
+          <h1>Reviews</h1>
+           <NewReview handleAddReview={handleAddReview}/>
+           <Reviews review={experience.review} user={props.user} />
       </header>
     </main>
   )
