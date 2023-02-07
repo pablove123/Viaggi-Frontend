@@ -1,5 +1,4 @@
 import styles from './Landing.module.css'
-import Background from '../../assets/branding/background.jpg'
 import Florence from '../../assets/branding/florence-link.jpg'
 import Rome from '../../assets/branding/rome-link.jpg'
 import Venice from '../../assets/branding/venice-link.jpg'
@@ -18,7 +17,6 @@ const Landing = ({ user }) => {
         <LandingCard imgsrc={Florence} alt ={'picture of florence'} cityName={'Florence'} />
         <LandingCard imgsrc={Rome} alt ={'picture of rome'} cityName={'Rome'} />
       </div>
-      {/* <div>< img src={Background} alt="background"/></div> */}
     </main>
   )
 }
