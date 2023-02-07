@@ -136,6 +136,14 @@ const addToFlorence = (experience) => {
             </ProtectedRoute>
           }
         />
+          <Route
+        path="/experience/:id"
+        element={
+            <ProtectedRoute user={user}>
+              <ExperienceDetails />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
 
 
