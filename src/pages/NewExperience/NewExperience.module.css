@@ -2,25 +2,13 @@
   position: fixed;
 }
 
-.newExperience {
+.container form {
   display: flex;
   flex-direction: column;
   margin: 5px 0px;
   /* background-color: aquamarine; */
   justify-content: center;
   align-items: center;
-}
-
-.newExperience > div {
-  width: 500px;
-  margin: 10px;
-}
-
-.formButton {
-  width: 100px;
-  border-radius: 8px;
-  background-color: brown;
-  color: whitesmoke;
 }
 
 .descriptionText {

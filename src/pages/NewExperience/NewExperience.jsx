@@ -27,7 +27,7 @@ const handleChangePhoto = (evt) => {
 
   return(
     <main className={styles.container}>
-      <form className={styles.newExperience} onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name-input">Name: </label>
           <input
@@ -93,7 +93,7 @@ const handleChangePhoto = (evt) => {
           onChange={handleChange}
           />
         </div>
-        <button className={styles.formButton} type="submit">SUBMIT</button>
+        <button type="submit">SUBMIT</button>
       </form>
     </main>
   )
