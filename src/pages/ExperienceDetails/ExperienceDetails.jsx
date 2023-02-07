@@ -23,7 +23,7 @@ const ExperienceDetails = (props) => {
 
   const handleAddReview = async (reviewData) => {
     const newReview = await expService.createReview(id, reviewData)
-    setExperience({...experience, reviews: [...experience.reviews, newReview] })
+    setExperience({...experience, review: [...experience.review, newReview] })
   }
 
 
@@ -35,16 +35,17 @@ const ExperienceDetails = (props) => {
         <h2>{experience.city}</h2>
         <h3>{experience.category}</h3>
         <h3>{experience.description}</h3>
-        {console.log(experience)}
         <span>
           {experience.author.map((author)=>(
 
           <AuthorInfo author={author}/>
+          
           ))}
           </span>
-        <h1>Reviews</h1>
-        <NewReview handleAddReview={handleAddReview}/>
-        <Reviews reviews={experience.reviews} user={props.user} />
+          <h1>Reviews</h1>
+           <NewReview handleAddReview={handleAddReview}/>
+           <Reviews review={experience.review} user={props.user} />
+        
 
       </header>
     </main>

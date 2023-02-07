@@ -1,13 +1,19 @@
 import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
-const ReviewCard = ({ comment }) => {
+const ReviewCard = ({ review }) => {
+  console.log("this is the prop called review kph:", review.content)
   return (
     <article>
       <header>
-        <AuthorInfo content={review} />
       </header>
-      <p>{review.text}</p>
+      <p>{review.content}</p>
+      <p>{review.rating}</p>
+      <p>{review.owner}</p>
+      <h1>Hello</h1>
+      {/* <AuthorInfo author={review} /> */}
     </article>
+
+        
   )
 }
 

@@ -1,11 +1,12 @@
-import ReviewCard from '../ReviewCard/ReviewCard'
+import ReviewCard from "../ReviewsCard/ReviewsCard"
 
 const Reviews = (props) => {
-  if (!props.reviews) return <h4>No Reviews</h4>
+    console.log("value of props in reviews in the Review component", props)
+  if (!props.review) return <h4>No Reviews</h4>
 
   return (
     <>
-      {props.reviews.map((review) => (
+      {props.review.map((review) => (
         <ReviewCard
           key={review._id}
           review={review}

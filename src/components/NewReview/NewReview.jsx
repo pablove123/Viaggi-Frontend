@@ -22,9 +22,9 @@ const NewReview = (props) => {
       <textarea
         required
         type="text"
-        name="text"
+        name="content"
         id="text-input"
-        value={form.text}
+        value={form.content}
         placeholder="Add a Review"
         onChange={handleChange}
       />

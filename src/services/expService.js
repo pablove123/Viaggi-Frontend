@@ -36,9 +36,9 @@ const create = async (experienceData) => {
   }
 }
 
-const createReview = async (_id, experienceData) => {
+const createReview = async (id, experienceData) => {
   try {
-    const res = await fetch(`${BASE_URL}/${_id}/reviews`, {
+    const res = await fetch(`${BASE_URL}/${id}/review`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
