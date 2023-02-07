@@ -5,6 +5,7 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
+  position: fixed;
 }
 
 .heroDiv {
@@ -15,6 +16,7 @@
   background-image: url('../../assets/branding/background.jpg');
   justify-content: center;
   align-items: center;
+  margin-top: -150px;
 }
 
 .landingContainer {
@@ -24,4 +26,14 @@
   height: 60%;
   width: 100%;
   justify-content: center;
+}
+
+.welcome {
+  margin: 5px 0px;
+  font-size: 45px;
+}
+
+.where {
+  margin: 5px 0px 20px 0px;
+  font-style: italic;
 }
