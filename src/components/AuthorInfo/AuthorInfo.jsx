@@ -1,5 +1,5 @@
 function AuthorInfo(props) {
-  console.log("author info", props.author.name)
+  console.log("the author of the review is showing as:", props.author.name)
     return (
       <>
       <h1>{props.author.name}</h1>
