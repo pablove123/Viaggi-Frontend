@@ -13,6 +13,7 @@
   flex-direction: column;
   min-width: 100%;
   height: 40%;
+  background-size: cover;
   background-image: url('../../assets/branding/background.jpg');
   justify-content: center;
   align-items: center;

@@ -1,4 +1,8 @@
 
+main {
+  margin-top: 100px;
+}
+
 form button {
   width: 100px;
   border-radius: 8px;
