@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import styles from './ExperienceDetails.module.css'
 import AuthorInfo from "../../components/AuthorInfo/AuthorInfo";
 import NewReview from "../../components/NewReview/NewReview";
-
+import Reviews from "../../components/Reviews/Reviews";
 // Services
 import * as expService from '../../services/expService'
 
@@ -42,8 +42,9 @@ const ExperienceDetails = (props) => {
           <AuthorInfo author={author}/>
           ))}
           </span>
-        <h1>Reviewss</h1>
+        <h1>Reviews</h1>
         <NewReview handleAddReview={handleAddReview}/>
+        <Reviews reviews={experience.reviews} user={props.user} />
 
       </header>
     </main>
