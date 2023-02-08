@@ -38,3 +38,23 @@
   background-color: brown;
   color: white;
 }
+
+.updateDelete {
+  display: flex;
+}
+
+.deleteButton {
+  background-color: brown;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 6px;
+  margin-left: 20px;
+  margin-top: -10px;
+}
+
+.Link {
+  text-decoration: none;
+  color: brown;
+  text-decoration: underline;
+}

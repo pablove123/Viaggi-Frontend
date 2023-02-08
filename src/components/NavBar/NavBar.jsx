@@ -17,13 +17,13 @@ const NavBar = ({ user, handleLogout }) => {
 
   const protectedLinks = (
     <ul>
-      <li><NavLink to="/experiences/Venice">Venice</NavLink></li>
-      <li><NavLink to="/experiences/Florence">Florence</NavLink></li>
-      <li><NavLink to="/experiences/Rome">Rome</NavLink></li>
-      <li><NavLink to="/experiences/new">New Experience</NavLink></li>
-      <li><NavLink to="/itinerary">Itinerary</NavLink></li>
+      <li><NavLink className={styles.NavLink} to="/experiences/Venice">Venice</NavLink></li>
+      <li><NavLink className={styles.NavLink} to="/experiences/Florence">Florence</NavLink></li>
+      <li><NavLink className={styles.NavLink} to="/experiences/Rome">Rome</NavLink></li>
+      <li><NavLink className={styles.NavLink} to="/experiences/new">New Experience</NavLink></li>
+      <li><NavLink className={styles.NavLink} to="/itinerary">Itinerary</NavLink></li>
       <li>
-        <NavLink to="/logout" onClick={handleLogout}>
+        <NavLink className={styles.NavLink} to="/logout" onClick={handleLogout}>
           <FontAwesomeIcon icon={faArrowRightFromBracket} size='lg' />
         </NavLink>
       </li>
