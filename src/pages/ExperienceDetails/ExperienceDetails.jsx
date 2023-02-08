@@ -40,27 +40,22 @@ const ExperienceDetails = (props) => {
           <h1>{experience.name}</h1>
           <h3>{experience.description}</h3>
           <button>Add to Itinerary</button>
+        <Link className={styles.Link} to={`/experiences/${id}/edit`} state={experience}>Update Exerience</Link>
         </div>
       </div>
-      <span>
+      <div>
         {experience.author.map((author)=>(
         <AuthorInfo key={author._id} author={author}/>
         ))}
-      <span>
+        <div>
         <AuthorInfo content={experience} />
-
           {/* {experience.author._id === props.user.profile && */}
-            <>
-              <Link to={`/experiences/${id}/edit`} state={experience}>Edit</Link>
-              <button onClick={() => props.handleDeleteExperience(id)}>Delete</button>
-            </>
+            <div className={styles.updateDelete}>
+              <button className={styles.deleteButton} onClick={() => props.handleDeleteExperience(id)}>Delete</button>
+            </div>
           {/* } */}
-
-        </span>
-
-
-
-      </span>
+        </div>
+      </div>
       <h1>Reviews</h1>
       <NewReview handleAddReview={handleAddReview}/>
       <Reviews review={experience.review} user={props.user} />
