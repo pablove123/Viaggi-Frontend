@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styles from './ExperienceDetails.module.css'
 import AuthorInfo from "../../components/AuthorInfo/AuthorInfo";
 import NewReview from "../../components/NewReview/NewReview";
