@@ -17,7 +17,9 @@ const NavBar = ({ user, handleLogout }) => {
 
   const protectedLinks = (
     <ul>
-      <li><NavLink to="/experiences">All Experiences</NavLink></li>
+      <li><NavLink to="/experiences/Venice">Venice</NavLink></li>
+      <li><NavLink to="/experiences/Florence">Florence</NavLink></li>
+      <li><NavLink to="/experiences/Rome">Rome</NavLink></li>
       <li><NavLink to="/experiences/new">New Experience</NavLink></li>
       <li><NavLink to="/itinerary">Itinerary</NavLink></li>
       <li>
@@ -25,6 +27,7 @@ const NavBar = ({ user, handleLogout }) => {
           <FontAwesomeIcon icon={faArrowRightFromBracket} size='lg' />
         </NavLink>
       </li>
+      {/* <li><NavLink to="/experiences">All Experiences</NavLink></li> */}
       {/* <li><NavLink to="/change-password">Change Password</NavLink></li> */}
       {/* <li><NavLink to="/profiles">Profiles</NavLink></li> */}
     </ul>
