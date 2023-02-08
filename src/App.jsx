@@ -22,7 +22,7 @@ import * as expService from './services/expService'
 // styles
 import './App.css'
 import NewExperience from './pages/NewExperience/NewExperience'
-import Itinerary from './pages/Itinerary/Itinerary'
+import NewItinerary from './pages/Itinerary/NewItinerary'
 import ExperienceDetails from './pages/ExperienceDetails/ExperienceDetails'
 
 const App = () => {
@@ -33,7 +33,6 @@ const App = () => {
   const [veniceExp, setVeniceExp] = useState([])
   const [florenceExp, setFlorenceExp] = useState([])
 
-  console.log(romeExp, "This is rome exp")
   
 
 const addToRome = (experience) => {
@@ -139,10 +138,10 @@ const addToFlorence = (experience) => {
           }
         />        
           <Route
-        path="/itinerary"
+        path="/itinerary/new"
         element={
             <ProtectedRoute user={user}>
-              <Itinerary romeExp={romeExp} veniceExp={veniceExp} florenceExp={florenceExp}/>
+              <NewItinerary romeExp={romeExp} veniceExp={veniceExp} florenceExp={florenceExp}/>
             </ProtectedRoute>
           }
         />
