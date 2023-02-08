@@ -37,3 +37,13 @@
     font-size: 15px;
   }
 }
+
+.NavLink {
+  text-decoration: none;
+  color: brown;
+  transition: .3s;
+}
+
+.NavLink:hover {
+  color: rgb(31, 31, 75);
+}
