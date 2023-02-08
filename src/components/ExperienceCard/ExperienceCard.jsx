@@ -3,19 +3,20 @@ import { Link } from "react-router-dom"
 import { useLocation } from 'react-router-dom'
 
 const ExperienceCard = (props) => {
-    console.log(props)
     const url = useLocation()
     const cityName = url.pathname.slice(13)
 
     const isVenice = (
-        <button onClick={() => props.addToVenice}>Add to Itinerary</button>
+        <button onClick={() => props.addToVenice(props.experience)}>Add to Itinerary</button>
       )
     const isRome = (
-        <button onClick={() => props.addToRome}>Add to Itinerary</button>
+        <button onClick={() => props.addToRome(props.experience)}>Add to Itinerary</button>
       )
     const isFlorence = (
-        <button onClick={() => props.addToFlorence}>Add to Itinerary</button>
-      )
+        <button onClick={() => props.addToFlorence(props.experience)}>Add to Itinerary</button>
+    )
+
+    
 
     return (
         <>
