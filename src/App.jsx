@@ -29,19 +29,19 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [experiences, setExperiences] = useState([])
-  // const [romeExp, setRomeExp] = useState(["test"])
-  // const [veniceExp, setVeniceExp] = useState(["test"])
-  // const [florenceExp, setFlorenceExp] = useState(["test"])
+  const [romeExp, setRomeExp] = useState(["test"])
+  const [veniceExp, setVeniceExp] = useState(["test"])
+  const [florenceExp, setFlorenceExp] = useState(["test"])
 
-// const addToRome = (experience) => {
-//   setRomeExp([...romeExp, experience])
-// }
-// const addToVenice = (experience) => {
-//   setVeniceExp([...veniceExp, experience])
-// }
-// const addToFlorence = (experience) => {
-//   setFlorenceExp([...florenceExp, experience])
-// }
+const addToRome = (experience) => {
+  setRomeExp([...romeExp, experience])
+}
+const addToVenice = (experience) => {
+  setVeniceExp([...veniceExp, experience])
+}
+const addToFlorence = (experience) => {
+  setFlorenceExp([...florenceExp, experience])
+}
 
   const handleLogout = () => {
     authService.logout()
@@ -140,7 +140,7 @@ const App = () => {
           path="/experiences/:experiencesId"
           element={
             <ProtectedRoute user={user}>
-              <ExperienceList experiences={experiences}/>
+              <ExperienceList addToRome={addToRome} addToFlorence={addToFlorence} addToVenice={addToVenice} experiences={experiences}/>
             </ProtectedRoute>
           }
         />

@@ -23,12 +23,12 @@
     margin: 7px 0px 14px 0px;
   }
   
-  .container button {
-    color: white;
+  /* .container button {
+    color: black;
     font-weight: 600;
     margin: 21px 0px 0px 0px;
-    background: var(--primary);
-  }
+    background: gray;
+  } */
   
   .container a {
     border: none;
