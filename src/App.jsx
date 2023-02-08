@@ -33,7 +33,6 @@ const App = () => {
   const [veniceExp, setVeniceExp] = useState([])
   const [florenceExp, setFlorenceExp] = useState([])
 
-  console.log(romeExp, "This is rome exp")
   
 
 const addToRome = (experience) => {
