@@ -75,6 +75,12 @@ const addToFlorence = (experience) => {
     navigate('/experiences')
   }
 
+  const handleUpdateExperience = async (experienceData) => {
+    const updatedExperience = await experienceService.update(experienceData)
+    setExperiences(experiences.map((b) => experienceData._id === b._id ? updatedExperience : b))
+    navigate('/experiences')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
