@@ -41,12 +41,12 @@ const ExperienceDetails = (props) => {
         <span>
           <AuthorInfo content={experience} />
 
-            {experience.author._id === props.user.profile &&
+            {/* {experience.author._id === props.user.profile && */}
               <>
                 <Link to={`/experiences/${id}/edit`} state={experience}>Edit</Link>
                 <button>Delete</button>
               </>
-            }
+            {/* } */}
 
           </span>
 
