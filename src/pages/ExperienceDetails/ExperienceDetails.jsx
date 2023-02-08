@@ -52,7 +52,7 @@ const ExperienceDetails = (props) => {
           {/* {experience.author._id === props.user.profile && */}
             <>
               <Link to={`/experiences/${id}/edit`} state={experience}>Edit</Link>
-              <button>Delete</button>
+              <button onClick={() => props.handleDeleteExperience(id)}>Delete</button>
             </>
           {/* } */}
 
