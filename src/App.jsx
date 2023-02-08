@@ -139,7 +139,7 @@ const addToFlorence = (experience) => {
           path="/experiences/:experiencesId"
           element={
             <ProtectedRoute user={user}>
-              <ExperienceList experiences={experiences}/>
+              <ExperienceList addToRome={addToRome} addToFlorence={addToFlorence} addToVenice={addToVenice} experiences={experiences}/>
             </ProtectedRoute>
           }
         />
