@@ -36,6 +36,22 @@ const create = async (experienceData) => {
   }
 }
 
+const update = async (experienceData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${experienceData._id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(experienceData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 async function addPhoto(photoData, puppyId) {
   const res = await fetch(`${BASE_URL}/${puppyId}/add-photo`, {
     method: 'PUT',
@@ -66,7 +82,8 @@ const createReview = async (id, experienceData) => {
 export { 
   getAllExperiences,
   show,
-  create, 
+  create,
+  update, 
   addPhoto,
   createReview
 }
