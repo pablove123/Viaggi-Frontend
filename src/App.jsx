@@ -133,12 +133,11 @@ const addToFlorence = (experience) => {
             </ProtectedRoute>
           }
         />        
-        <Route
+          <Route
         path="/itinerary"
         element={
             <ProtectedRoute user={user}>
-              {/* <Itinerary romeExp={romeExp} veniceExp={veniceExp} florenceExp={florenceExp}/> */}
-              <Itinerary />
+              <Itinerary romeExp={romeExp} veniceExp={veniceExp} florenceExp={florenceExp}/>
             </ProtectedRoute>
           }
         />
