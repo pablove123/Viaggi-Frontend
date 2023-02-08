@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import ExperienceList from './pages/ExperienceList/ExperienceList'
+import EditExperience from './pages/EditExperience/EditExperience'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -75,6 +76,12 @@ const App = () => {
     navigate('/experiences')
   }
 
+  const handleUpdateExperience = async (experienceData) => {
+    const updatedExperience = await experienceService.update(experienceData)
+    setExperiences(experiences.map((b) => experienceData._id === b._id ? updatedExperience : b))
+    navigate('/experiences')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -129,7 +136,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-      <Route
+        <Route
           path="/experiences/:experiencesId"
           element={
             <ProtectedRoute user={user}>
@@ -145,9 +152,12 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/experiences/:id/edit" element={
+	      <ProtectedRoute user={user}>
+		    <EditBlog handleUpdateExperience={handleUpdateExperience} />
+	      </ProtectedRoute>
+        } />
       </Routes>
-
-
     </>
   )
 }
