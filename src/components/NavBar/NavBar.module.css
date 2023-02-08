@@ -7,7 +7,6 @@
   position: fixed; 
   padding: 14px 21px;
   align-items: center;
-  background: transparent;
 }
 
 .container img {
@@ -22,6 +21,7 @@
   font-weight: bold;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 35px;
 }
 
 .container li {
