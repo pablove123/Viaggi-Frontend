@@ -28,35 +28,42 @@ const ExperienceDetails = (props) => {
 
   return (
     <main className={styles.container}>
-      <header>
-        <img src={experience.photo} alt="" />
-        <h1>{experience.name}</h1>
-        <h2>{experience.city}</h2>
+      <div>
+        <h1>{experience.city}</h1>
         <h3>{experience.category}</h3>
-        <h3>{experience.description}</h3>
-        <span>
-          {experience.author.map((author)=>(
-          <AuthorInfo key={author._id} author={author}/>
-          ))}
-        <span>
-          <AuthorInfo content={experience} />
+      </div>
+      <div className={styles.cardContainer}>
+        <div>
+          <img className={styles.detailPhoto} src={experience.photo} alt="" /> 
+        </div>
+        <div>
+          <h1>{experience.name}</h1>
+          <h3>{experience.description}</h3>
+          <button>Add to Itinerary</button>
+        </div>
+      </div>
+      <span>
+        {experience.author.map((author)=>(
+        <AuthorInfo key={author._id} author={author}/>
+        ))}
+      <span>
+        <AuthorInfo content={experience} />
 
-            {/* {experience.author._id === props.user.profile && */}
-              <>
-                <Link to={`/experiences/${id}/edit`} state={experience}>Edit</Link>
-                <button>Delete</button>
-              </>
-            {/* } */}
-
-          </span>
-
-
+          {/* {experience.author._id === props.user.profile && */}
+            <>
+              <Link to={`/experiences/${id}/edit`} state={experience}>Edit</Link>
+              <button onClick={() => props.handleDeleteExperience(id)}>Delete</button>
+            </>
+          {/* } */}
 
         </span>
-        <h1>Reviews</h1>
-        <NewReview handleAddReview={handleAddReview}/>
-        <Reviews review={experience.review} user={props.user} />
-      </header>
+
+
+
+      </span>
+      <h1>Reviews</h1>
+      <NewReview handleAddReview={handleAddReview}/>
+      <Reviews review={experience.review} user={props.user} />
     </main>
   )
 }
