@@ -1,4 +1,4 @@
-import AuthorInfo from "../AuthorInfo/AuthorInfo"
+
 
 const ReviewCard = ({ review }) => {
   return (
