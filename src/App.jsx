@@ -135,7 +135,7 @@ const addToFlorence = (experience) => {
             </ProtectedRoute>
           }
         />
-      <Route
+        <Route
           path="/experiences/:experiencesId"
           element={
             <ProtectedRoute user={user}>
@@ -151,9 +151,12 @@ const addToFlorence = (experience) => {
             </ProtectedRoute>
           }
         />
+        <Route path="/experiences/:id/edit" element={
+	      <ProtectedRoute user={user}>
+		    <EditBlog handleUpdateExperience={handleUpdateExperience} />
+	      </ProtectedRoute>
+        } />
       </Routes>
-
-
     </>
   )
 }
