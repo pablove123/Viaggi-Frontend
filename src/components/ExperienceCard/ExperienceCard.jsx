@@ -19,14 +19,3 @@ const ExperienceCard = ({experience}) => {
 }
 
 export default ExperienceCard
-
-
-{/* <article className={styles.container}>
-    <Link to={`/experiences/${experience._id}`}>
-        <header>
-            {experience.name}
-        </header>
-    </Link>
-    <p>{experience.description}</p>
-    <img src={experience.photo} alt="" />
-</article>  */}

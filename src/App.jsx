@@ -1,6 +1,6 @@
 // npm modules
 import { useEffect, useState } from 'react'
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // page components
 import Signup from './pages/Signup/Signup'
@@ -28,19 +28,19 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [experiences, setExperiences] = useState([])
-  const [romeExp, setRomeExp] = useState(["test"])
-  const [veniceExp, setVeniceExp] = useState(["test"])
-  const [florenceExp, setFlorenceExp] = useState(["test"])
+  // const [romeExp, setRomeExp] = useState(["test"])
+  // const [veniceExp, setVeniceExp] = useState(["test"])
+  // const [florenceExp, setFlorenceExp] = useState(["test"])
 
-const addToRome = (experience) => {
-  setRomeExp([...romeExp, experience])
-}
-const addToVenice = (experience) => {
-  setVeniceExp([...veniceExp, experience])
-}
-const addToFlorence = (experience) => {
-  setFlorenceExp([...florenceExp, experience])
-}
+// const addToRome = (experience) => {
+//   setRomeExp([...romeExp, experience])
+// }
+// const addToVenice = (experience) => {
+//   setVeniceExp([...veniceExp, experience])
+// }
+// const addToFlorence = (experience) => {
+//   setFlorenceExp([...florenceExp, experience])
+// }
 
   const handleLogout = () => {
     authService.logout()
@@ -124,7 +124,8 @@ const addToFlorence = (experience) => {
         path="/itinerary"
         element={
             <ProtectedRoute user={user}>
-              <Itinerary romeExp={romeExp} veniceExp={veniceExp} florenceExp={florenceExp}/>
+              {/* <Itinerary romeExp={romeExp} veniceExp={veniceExp} florenceExp={florenceExp}/> */}
+              <Itinerary />
             </ProtectedRoute>
           }
         />

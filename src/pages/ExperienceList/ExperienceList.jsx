@@ -9,7 +9,7 @@ const cityName = url.pathname.slice(13)
 
 
 const filterArray = (array) => {
-  return array.filter(item => item.city == cityName);
+  return array.filter(item => item.city === cityName);
 };
 
 const filtered = filterArray(props.experiences)
