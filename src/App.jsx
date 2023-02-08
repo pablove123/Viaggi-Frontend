@@ -85,7 +85,7 @@ const addToFlorence = (experience) => {
   const handleDeleteExperience = async (id) => {
     const deletedExperience = await expService.deleteExperience(id)
     setExperiences(experiences.filter(b => b._id !== deletedExperience._id))
-    navigate('/experiences')
+    navigate('/')
   }
 
   return (
@@ -154,7 +154,7 @@ const addToFlorence = (experience) => {
         path="/experience/:id"
         element={
             <ProtectedRoute user={user}>
-              <ExperienceDetails />
+              <ExperienceDetails user={user} handleDeleteExperience={handleDeleteExperience}/>
             </ProtectedRoute>
           }
         />
