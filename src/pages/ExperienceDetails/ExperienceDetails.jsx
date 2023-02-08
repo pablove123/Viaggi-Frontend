@@ -28,7 +28,7 @@ const ExperienceDetails = (props) => {
 
   return (
     <main className={styles.container}>
-      <div>
+      <div className={styles.header}>
         <h1>{experience.city}</h1>
         <h3>{experience.category}</h3>
       </div>
