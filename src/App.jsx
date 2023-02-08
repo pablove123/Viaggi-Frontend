@@ -163,6 +163,15 @@ const App = () => {
 		    <EditExperience handleUpdateExperience={handleUpdateExperience} />
 	      </ProtectedRoute>
         } />
+
+        <Route path="/experiences/:id" element={
+        <ProtectedRoute user={user}>
+        <ExperienceDetails user={user} handleDeleteExperience={handleDeleteExperience} />
+        </ProtectedRoute>
+        } />
+
+
+
       </Routes>
     </>
   )
