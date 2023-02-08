@@ -29,9 +29,12 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [experiences, setExperiences] = useState([])
-  const [romeExp, setRomeExp] = useState(["test"])
-  const [veniceExp, setVeniceExp] = useState(["test"])
-  const [florenceExp, setFlorenceExp] = useState(["test"])
+  const [romeExp, setRomeExp] = useState([])
+  const [veniceExp, setVeniceExp] = useState([])
+  const [florenceExp, setFlorenceExp] = useState([])
+
+  console.log(romeExp, "This is rome exp")
+  
 
 const addToRome = (experience) => {
   setRomeExp([...romeExp, experience])
@@ -60,6 +63,8 @@ const addToFlorence = (experience) => {
     } 
     if (user) fetchAllExperiences()
   }, [user])
+
+
 
   const expPhotoHelper = async (photo, id) => {
     const photoData = new FormData()
@@ -133,12 +138,11 @@ const addToFlorence = (experience) => {
             </ProtectedRoute>
           }
         />        
-        <Route
+          <Route
         path="/itinerary"
         element={
             <ProtectedRoute user={user}>
-              {/* <Itinerary romeExp={romeExp} veniceExp={veniceExp} florenceExp={florenceExp}/> */}
-              <Itinerary />
+              <Itinerary romeExp={romeExp} veniceExp={veniceExp} florenceExp={florenceExp}/>
             </ProtectedRoute>
           }
         />

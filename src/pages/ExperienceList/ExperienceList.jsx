@@ -17,7 +17,7 @@ const filtered = filterArray(props.experiences)
   return (  
     <main className={styles.experienceListContainer}>
       {filtered.map((experience) => (
-          <ExperienceCard key={experience._id} experience={experience} />
+                    <ExperienceCard key={experience._id} experience={experience} addToRome={props.addToRome} addToFlorence={props.addToFlorence} addToVenice={props.addToVenice} />
       ))}
     </main>
   )
