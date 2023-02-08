@@ -22,6 +22,7 @@
   font-weight: bold;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 35px;
 }
 
 .container li {

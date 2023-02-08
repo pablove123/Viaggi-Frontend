@@ -15,10 +15,10 @@ const NavBar = ({ user, handleLogout }) => {
     <ul>
       <li><NavLink to="/experiences">All Experiences</NavLink></li>
       <li><NavLink to="/experiences/new">New Experience</NavLink></li>
-      <li><NavLink to="/change-password">Change Password</NavLink></li>
-      <li><NavLink to="/profiles">Profiles</NavLink></li>
       <li><NavLink to="/itinerary">Itinerary</NavLink></li>
       <li><NavLink to="/logout" onClick={handleLogout}>LOG OUT</NavLink></li>
+      {/* <li><NavLink to="/change-password">Change Password</NavLink></li> */}
+      {/* <li><NavLink to="/profiles">Profiles</NavLink></li> */}
     </ul>
   )
   return (
