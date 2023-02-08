@@ -79,11 +79,26 @@ const createReview = async (id, experienceData) => {
   }
 }
 
+const deleteExperience = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export { 
   getAllExperiences,
   show,
   create,
   update, 
   addPhoto,
-  createReview
+  createReview,
+  deleteExperience
 }

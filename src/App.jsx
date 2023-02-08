@@ -82,6 +82,12 @@ const App = () => {
     navigate('/experiences')
   }
 
+  const handleDeleteExperience = async (id) => {
+    const deletedExperience = await expService.deleteExperience(id)
+    setExperiences(experiences.filter(b => b._id !== deletedExperience._id))
+    navigate('/experiences')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -157,6 +163,15 @@ const App = () => {
 		    <EditExperience handleUpdateExperience={handleUpdateExperience} />
 	      </ProtectedRoute>
         } />
+
+        <Route path="/experiences/:id" element={
+        <ProtectedRoute user={user}>
+        <ExperienceDetails user={user} handleDeleteExperience={handleDeleteExperience} />
+        </ProtectedRoute>
+        } />
+
+
+
       </Routes>
     </>
   )
