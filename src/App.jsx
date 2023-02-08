@@ -82,6 +82,12 @@ const App = () => {
     navigate('/experiences')
   }
 
+  const handleDeleteExperience = async (id) => {
+    const deletedExperience = await experienceService.deleteExperience(id)
+    setExperiences(experiences.filter(b => b._id !== deletedExperience._id))
+    navigate('/experiences')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
