@@ -83,7 +83,7 @@ const App = () => {
   }
 
   const handleDeleteExperience = async (id) => {
-    const deletedExperience = await experienceService.deleteExperience(id)
+    const deletedExperience = await expService.deleteExperience(id)
     setExperiences(experiences.filter(b => b._id !== deletedExperience._id))
     navigate('/experiences')
   }
