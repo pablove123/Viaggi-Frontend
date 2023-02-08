@@ -79,7 +79,7 @@ const addToFlorence = (experience) => {
   const handleUpdateExperience = async (experienceData) => {
     const updatedExperience = await expService.update(experienceData)
     setExperiences(experiences.map((b) => experienceData._id === b._id ? updatedExperience : b))
-    navigate('/experiences')
+    navigate(`/experience/${experienceData._id}`)
   }
 
   const handleDeleteExperience = async (id) => {
