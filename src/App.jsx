@@ -77,7 +77,7 @@ const App = () => {
   }
 
   const handleUpdateExperience = async (experienceData) => {
-    const updatedExperience = await experienceService.update(experienceData)
+    const updatedExperience = await expService.update(experienceData)
     setExperiences(experiences.map((b) => experienceData._id === b._id ? updatedExperience : b))
     navigate('/experiences')
   }
@@ -154,7 +154,7 @@ const App = () => {
         />
         <Route path="/experiences/:id/edit" element={
 	      <ProtectedRoute user={user}>
-		    <EditBlog handleUpdateExperience={handleUpdateExperience} />
+		    <EditExperience handleUpdateExperience={handleUpdateExperience} />
 	      </ProtectedRoute>
         } />
       </Routes>
