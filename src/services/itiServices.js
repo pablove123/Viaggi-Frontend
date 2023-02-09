@@ -19,6 +19,21 @@ const create = async (itiData) => {
   }
 }
 
+const addToItinerary = async (itineraryId, experienceId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${itineraryId}/experiences/${experienceId}`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+      },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export{
-  create
+  create,
+  addToItinerary
 }
