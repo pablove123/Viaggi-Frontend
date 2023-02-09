@@ -1,14 +1,13 @@
-
+import styles from './ReviewsCard.module.css'
 
 const ReviewCard = ({ review }) => {
   return (
-    <article>
-      <header>
-      </header>
+    <main className={styles.container}>
       <p>{review.author.name}</p>
-      <p>{review.rating}</p>
+      <img src={review.author.photo} alt="" />
+      <p>{review.rating} ⭐️ Rating</p>
       <p>{review.content}</p>
-    </article>
+    </main>
 
         
   )
