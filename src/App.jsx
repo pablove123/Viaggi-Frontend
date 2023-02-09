@@ -67,7 +67,6 @@ const addToFlorence = (experience) => {
   useEffect(()=>{
     const fetchProfile = async () =>{
       const profileData = await profileService.getMyProfile()
-      console.log(profileData)
       setMyIts(profileData.itineraries)
     }
     fetchProfile()
