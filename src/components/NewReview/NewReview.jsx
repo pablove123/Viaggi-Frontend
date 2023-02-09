@@ -1,9 +1,6 @@
 import { useState } from "react"
 import styles from './NewReview.module.css'
 
-// Components
-import Icon from "../Icon/Icon"
-
 const NewReview = (props) => {
   const [form, setForm] = useState({ content: '' })
 

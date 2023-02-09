@@ -9,14 +9,6 @@ function ItineraryDetails(props) {
   const [itinerary, setItinerary] = useState()
   const { itineraryId } = useParams()
 
-// const filterArray = (array, id) => {
-//   return array.filter(itinerary => itinerary._id === id);
-// }
-// const filteredItinerary = filterArray(props.myIts, id)
-  const location = useLocation()
-// const itineraryId = location.pathname.slice(11)
-
-
   useEffect(()=>{
     const fetchItinerary = async () =>{
       const itinerariesData = await itiService.show(itineraryId)

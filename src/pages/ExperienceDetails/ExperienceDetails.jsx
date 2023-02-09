@@ -4,8 +4,6 @@ import styles from './ExperienceDetails.module.css'
 import AuthorInfo from "../../components/AuthorInfo/AuthorInfo";
 import NewReview from "../../components/NewReview/NewReview";
 import Reviews from "../../components/Reviews/Reviews";
-import Icon from "../../components/Icon/Icon";
-// Services
 import * as expService from '../../services/expService'
 import * as itiService from '../../services/itiServices'
 
