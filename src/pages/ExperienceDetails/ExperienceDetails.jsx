@@ -6,10 +6,12 @@ import NewReview from "../../components/NewReview/NewReview";
 import Reviews from "../../components/Reviews/Reviews";
 // Services
 import * as expService from '../../services/expService'
+import * as itiService from '../../services/itiServices'
 
 const ExperienceDetails = (props) => {
   const { id } = useParams()
   const [experience, setExperience] = useState(null)
+  const [itineraryId, setItineraryId] = useState('')
 
   useEffect(() => {
     const fetchExperience = async () => {
@@ -26,6 +28,23 @@ const ExperienceDetails = (props) => {
     setExperience({...experience, review: [...experience.review, newReview] })
   }
 
+  const handleAddToItinerary = async (e) => {
+    e.preventDefault()
+    const updatedItinerary = await itiService.addToItinerary(itineraryId, experience._id)
+    console.log(updatedItinerary);
+    setItineraryId('')
+    props.setMyIts(props.myIts.map((it) => {
+      return it._id === updatedItinerary._id
+        ? updatedItinerary 
+        :it
+    }))
+  }
+
+  const availableIts = props.myIts.filter((it) => {
+    console.log(it);
+    return !it.experiences.includes(experience._id)
+  }) 
+
   return (
     <main className={styles.container}>
       <div className={styles.header}>
@@ -39,7 +58,22 @@ const ExperienceDetails = (props) => {
         <div>
           <h1>{experience.name}</h1>
           <h3>{experience.description}</h3>
-          <button>Add to Itinerary</button>
+
+          <form onSubmit={handleAddToItinerary}>
+            <p>Select your itinerary:</p>
+            <select required value={itineraryId} onChange={(e) => setItineraryId(e.target.value)}>
+              <option value="">Please select an itinerary</option>
+              {availableIts.map((it) => (
+                <option  key={it._id} value={it._id}>{it.name}</option>
+              ))}
+            </select>
+            <button type="submit">
+              Add to Itinerary
+            </button>
+          </form>
+
+
+
         <Link className={styles.Link} to={`/experiences/${id}/edit`} state={experience}>Update Exerience</Link>
         </div>
       </div>

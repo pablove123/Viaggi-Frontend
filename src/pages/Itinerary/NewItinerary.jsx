@@ -7,17 +7,17 @@ import * as profileService from "../../services/profileService"
 
 function NewItinerary(props) {
   const [itName, setItName] = useState("")
-  const [myIts, setMyIts] = useState([]) 
+  // const [myIts, setMyIts] = useState([]) 
   const navigate = useNavigate()
 
-  useEffect(()=>{
-    const fetchProfile = async () =>{
-      const profileData = await profileService.getMyProfile()
-      console.log(profileData)
-      setMyIts(profileData.itineraries)
-    }
-    fetchProfile()
-  }, [])
+  // useEffect(()=>{
+  //   const fetchProfile = async () =>{
+  //     const profileData = await profileService.getMyProfile()
+  //     console.log(profileData)
+  //     setMyIts(profileData.itineraries)
+  //   }
+  //   fetchProfile()
+  // }, [])
   
   const handleSubmit = async(e) => {
     e.preventDefault()
@@ -25,6 +25,7 @@ function NewItinerary(props) {
     const newItinerary = await itiService.create(form)
     console.log(newItinerary)
     setItName("")
+    props.setMyIts([...props.myIts, newItinerary])
   }
 
 
@@ -41,7 +42,7 @@ function NewItinerary(props) {
           />
           <button type="submit">Create Itinerary</button>
         </form>
-        <ItineraryList myIts={myIts}/>
+        <ItineraryList myIts={props.myIts}/>
     </main>
   )
 }
