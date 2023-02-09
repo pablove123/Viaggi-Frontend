@@ -85,7 +85,7 @@ const addToFlorence = (experience) => {
       newExperience.photo = await expPhotoHelper(photo, newExperience._id)
     }
     setExperiences([newExperience, ...experiences])
-    navigate('/experiences')
+    navigate(`/experience/${newExperience._id}`)
   }
 
   const handleUpdateExperience = async (experienceData) => {
