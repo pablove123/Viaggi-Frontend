@@ -5,9 +5,9 @@ const ReviewCard = ({ review }) => {
     <article>
       <header>
       </header>
-      <p>{review.content}</p>
-      <p>{review.rating}</p>
       <p>{review.author.name}</p>
+      <p>{review.rating}</p>
+      <p>{review.content}</p>
     </article>
 
         
