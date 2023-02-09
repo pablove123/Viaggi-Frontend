@@ -33,7 +33,6 @@ const ExperienceDetails = (props) => {
   const handleAddToItinerary = async (e) => {
     e.preventDefault()
     const updatedItinerary = await itiService.addToItinerary(itineraryId, experience._id)
-    console.log(updatedItinerary);
     setItineraryId('')
     props.setMyIts(props.myIts.map((it) => {
       return it._id === updatedItinerary._id
@@ -43,7 +42,6 @@ const ExperienceDetails = (props) => {
   }
 
   const availableIts = props.myIts.filter((it) => {
-    console.log(it);
     return !it.experiences.includes(experience._id)
   }) 
 

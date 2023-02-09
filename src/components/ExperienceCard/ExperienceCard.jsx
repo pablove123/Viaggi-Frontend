@@ -1,22 +1,7 @@
 import styles from './ExperienceCard.module.css'
 import { Link } from "react-router-dom"
-import { useLocation } from 'react-router-dom'
 
 const ExperienceCard = (props) => {
-    const url = useLocation()
-    const cityName = url.pathname.slice(13)
-
-    const isVenice = (
-        <button onClick={() => props.addToVenice(props.experience)}>Add to Itinerary</button>
-    )
-    const isRome = (
-        <button onClick={() => props.addToRome(props.experience)}>Add to Itinerary</button>
-    )
-    const isFlorence = (
-        <button onClick={() => props.addToFlorence(props.experience)}>Add to Itinerary</button>
-    )
-
-    
 
     return (
         <>
@@ -29,11 +14,6 @@ const ExperienceCard = (props) => {
                     </div>
                 </div>
             </Link>
-            <div>
-            {cityName==="Rome" ? isRome : null}
-            {cityName==="Venice" ? isVenice : null}
-            {cityName==="Florence" ? isFlorence : null}
-            </div>
         </>
     )
 }
