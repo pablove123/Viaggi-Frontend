@@ -1,5 +1,4 @@
 import styles from './ItineraryDetails.module.css'
-import { useLocation } from "react-router-dom"
 import { useState, useEffect } from 'react';
 import * as itiService from "../../services/itiServices"
 import { useParams } from 'react-router-dom';
