@@ -7,7 +7,6 @@ import { useLocation } from 'react-router-dom'
 
 const NavBar = ({ user, handleLogout }) => {
   const location = useLocation()
-// background: transparent;
   const publicLinks = (
     <ul>
       <li><NavLink className={styles.NavLink} to="/experiences/Venice">Venice</NavLink></li>
@@ -24,7 +23,7 @@ const NavBar = ({ user, handleLogout }) => {
       <li><NavLink className={styles.NavLink} to="/experiences/Florence">Florence</NavLink></li>
       <li><NavLink className={styles.NavLink} to="/experiences/Rome">Rome</NavLink></li>
       <li><NavLink className={styles.NavLink} to="/experiences/new">Add Experience</NavLink></li>
-      <li><NavLink className={styles.NavLink} to="/itinerary/new">New Itinerary</NavLink></li>
+      <li><NavLink className={styles.NavLink} to="/itinerary/new">My Itinerary</NavLink></li>
       <li>
         <NavLink className={styles.NavLink} to="/logout" onClick={handleLogout}>
           <FontAwesomeIcon icon={faArrowRightFromBracket} size='lg' />

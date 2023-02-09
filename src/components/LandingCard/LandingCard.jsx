@@ -1,7 +1,7 @@
 import styles from './LandingCard.module.css'
 import { Link } from 'react-router-dom';
 
-const LandingCard = (props) => {
+function LandingCard(props) {
   return ( 
     <>
     <Link to={`experiences/${props.cityName}`}>

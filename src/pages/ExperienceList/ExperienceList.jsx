@@ -4,20 +4,20 @@ import { useLocation } from 'react-router-dom';
 
 function ExperienceList(props) {
 
-const url = useLocation()
-const cityName = url.pathname.slice(13)
+  const url = useLocation()
+  const cityName = url.pathname.slice(13)
 
 
-const filterArray = (array) => {
-  return array.filter(item => item.city === cityName);
-};
+  const filterArray = (array) => {
+    return array.filter(item => item.city === cityName);
+  };
 
-const filtered = filterArray(props.experiences)
+  const filtered = filterArray(props.experiences)
 
   return (  
     <main className={styles.experienceListContainer}>
       {filtered.map((experience) => (
-                    <ExperienceCard key={experience._id} experience={experience} addToRome={props.addToRome} addToFlorence={props.addToFlorence} addToVenice={props.addToVenice} />
+        <ExperienceCard key={experience._id} experience={experience} />
       ))}
     </main>
   )

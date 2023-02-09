@@ -27,8 +27,6 @@ function ItineraryDetails(props) {
           <ExperienceCard key={experience._id}experience={experience}/>
         ))}
       </div>
-    
-      
     </section>
   )
 }
