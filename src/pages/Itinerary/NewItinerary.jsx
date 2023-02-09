@@ -1,4 +1,4 @@
-import styles from './Itinerary.module.css'
+import styles from './NewItinerary.module.css'
 import { useState, useEffect } from 'react'
 import * as itiService from "../../services/itiServices"
 import { useNavigate } from 'react-router-dom'
@@ -30,7 +30,7 @@ function NewItinerary(props) {
 
 
   return(
-    <main className={styles.Container}>
+    <main className={styles.container}>
         <h1>New Itinerary</h1>
         <form onSubmit={handleSubmit}>
           <input 
