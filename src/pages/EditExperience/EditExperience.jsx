@@ -6,7 +6,6 @@ const EditExperience = (props) => {
   const { state } = useLocation()
   const [form, setForm] = useState(state)
 
-  console.log(state)
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
   }
