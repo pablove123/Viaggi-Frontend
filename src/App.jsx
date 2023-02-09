@@ -31,21 +31,7 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [experiences, setExperiences] = useState([])
-  const [romeExp, setRomeExp] = useState([])
-  const [veniceExp, setVeniceExp] = useState([])
   const [myIts, setMyIts] = useState([]) 
-  const [florenceExp, setFlorenceExp] = useState([])
-
-
-const addToRome = (experience) => {
-  setRomeExp([...romeExp, experience])
-}
-const addToVenice = (experience) => {
-  setVeniceExp([...veniceExp, experience])
-}
-const addToFlorence = (experience) => {
-  setFlorenceExp([...florenceExp, experience])
-}
 
   const handleLogout = () => {
     authService.logout()
@@ -122,14 +108,6 @@ const addToFlorence = (experience) => {
           }
         />
         <Route
-          path="/experiences"
-          element={
-            <ProtectedRoute user={user}>
-              <ExperienceList experiences={experiences}/>
-            </ProtectedRoute>
-          }
-        />
-        <Route
           path="/change-password"
           element={
             <ProtectedRoute user={user}>
@@ -148,13 +126,13 @@ const addToFlorence = (experience) => {
           <Route
         path="/itinerary/new"
         element={
-            <ProtectedRoute user={user}>
-              <NewItinerary
-                myIts={myIts}
-                setMyIts={setMyIts}
-              />
-            </ProtectedRoute>
-          }
+          <ProtectedRoute user={user}>
+            <NewItinerary
+              myIts={myIts}
+              setMyIts={setMyIts}
+            />
+          </ProtectedRoute>
+        }
         />
           <Route
         path="/itinerary/:itineraryId"
@@ -170,32 +148,22 @@ const addToFlorence = (experience) => {
         <Route
           path="/experiences/:experiencesId"
           element={
-            <ProtectedRoute user={user}>
-              <ExperienceList addToRome={addToRome} addToFlorence={addToFlorence} addToVenice={addToVenice} experiences={experiences}/>
-            </ProtectedRoute>
+            <ExperienceList experiences={experiences}/>
           }
         />
           <Route
         path="/experience/:id"
         element={
-            <ProtectedRoute user={user}>
-              <ExperienceDetails setMyIts={setMyIts} myIts={myIts} user={user} handleDeleteExperience={handleDeleteExperience}/>
-            </ProtectedRoute>
-          }
+          <ProtectedRoute user={user}>
+            <ExperienceDetails setMyIts={setMyIts} myIts={myIts} user={user} handleDeleteExperience={handleDeleteExperience}/>
+          </ProtectedRoute>
+        }
         />
         <Route path="/experiences/:id/edit" element={
           <ProtectedRoute user={user}>
           <EditExperience handleUpdateExperience={handleUpdateExperience} />
           </ProtectedRoute>
         } />
-
-        <Route path="/experiences/:id" element={
-        <ProtectedRoute user={user}>
-        <ExperienceDetails user={user} handleDeleteExperience={handleDeleteExperience} />
-        </ProtectedRoute>
-        } />
-
-
 
       </Routes>
     </>
