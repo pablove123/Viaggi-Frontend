@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  margin-left: 2.5%;
+  width: 80%;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.container img {
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+}
+
+.container :nth-child(2) {
+  margin-left: 20px;
+}
