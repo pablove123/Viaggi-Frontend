@@ -13,6 +13,8 @@ const ExperienceDetails = (props) => {
   const [experience, setExperience] = useState(null)
   const [itineraryId, setItineraryId] = useState('')
 
+  console.log("Detail ID", id)
+
   useEffect(() => {
     const fetchExperience = async () => {
       const data = await expService.show(id)
