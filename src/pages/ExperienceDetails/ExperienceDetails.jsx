@@ -59,7 +59,6 @@ const ExperienceDetails = (props) => {
         <div>
           <h1>{experience.name}</h1>
           <h3>{experience.description}</h3>
-
           <form onSubmit={handleAddToItinerary}>
             <p>Select your itinerary:</p>
             <select required value={itineraryId} onChange={(e) => setItineraryId(e.target.value)}>
@@ -72,10 +71,7 @@ const ExperienceDetails = (props) => {
               Add to Itinerary
             </button>
           </form>
-
-
-
-        <Link className={styles.Link} to={`/experiences/${id}/edit`} state={experience}>Update Exerience</Link>
+          <Link className={styles.Link} to={`/experiences/${id}/edit`} state={experience}>Update Exerience</Link>
         </div>
       </div>
       <div>
