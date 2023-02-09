@@ -21,3 +21,14 @@
   text-decoration: none;
   color: black;
 }
+
+.icon {
+  height: 20px;
+}
+
+.nameIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
