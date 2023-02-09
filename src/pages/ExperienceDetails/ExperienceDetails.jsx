@@ -12,8 +12,6 @@ const ExperienceDetails = (props) => {
   const [experience, setExperience] = useState(null)
   const [itineraryId, setItineraryId] = useState('')
 
-  console.log("Detail ID", id)
-
   useEffect(() => {
     const fetchExperience = async () => {
       const data = await expService.show(id)
@@ -43,6 +41,8 @@ const ExperienceDetails = (props) => {
   const availableIts = props.myIts.filter((it) => {
     return !it.experiences.includes(experience._id)
   }) 
+  console.log("THIS IS PROPS DOT USE<<<<<",props.user.profile);
+  console.log("THIS IS AUTHOR<<<<", experience.author[0]._id);
 
   return (
     <main className={styles.container}>
@@ -69,7 +69,9 @@ const ExperienceDetails = (props) => {
               Add to Itinerary
             </button>
           </form>
-          <Link className={styles.Link} to={`/experiences/${id}/edit`} state={experience}>Update Exerience</Link>
+          {experience.author[0]._id === props.user.profile &&
+            <Link className={styles.Link} to={`/experiences/${id}/edit`} state={experience}>Update Exerience</Link>
+          }
         </div>
       </div>
       <div>
@@ -78,11 +80,11 @@ const ExperienceDetails = (props) => {
         ))}
         <div>
         <AuthorInfo content={experience} />
-          {/* {experience.author._id === props.user.profile && */}
+          {experience.author[0]._id === props.user.profile &&
             <div className={styles.updateDelete}>
               <button className={styles.deleteButton} onClick={() => props.handleDeleteExperience(id)}>Delete</button>
             </div>
-          {/* } */}
+          }
         </div>
       </div>
       <div className={styles.leaveReview}>
