@@ -25,6 +25,7 @@ import './App.css'
 import NewExperience from './pages/NewExperience/NewExperience'
 import NewItinerary from './pages/Itinerary/NewItinerary'
 import ExperienceDetails from './pages/ExperienceDetails/ExperienceDetails'
+import ItineraryDetails from './pages/ItineraryDetails/ItineraryDetails'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -67,7 +68,6 @@ const addToFlorence = (experience) => {
   useEffect(()=>{
     const fetchProfile = async () =>{
       const profileData = await profileService.getMyProfile()
-      console.log(profileData)
       setMyIts(profileData.itineraries)
     }
     fetchProfile()
@@ -150,6 +150,17 @@ const addToFlorence = (experience) => {
         element={
             <ProtectedRoute user={user}>
               <NewItinerary
+                myIts={myIts}
+                setMyIts={setMyIts}
+              />
+            </ProtectedRoute>
+          }
+        />
+          <Route
+        path="/itinerary/new/:itineraryDetails"
+        element={
+            <ProtectedRoute user={user}>
+              <ItineraryDetails
                 myIts={myIts}
                 setMyIts={setMyIts}
               />
