@@ -10,14 +10,7 @@ function NewItinerary(props) {
   // const [myIts, setMyIts] = useState([]) 
   const navigate = useNavigate()
 
-  // useEffect(()=>{
-  //   const fetchProfile = async () =>{
-  //     const profileData = await profileService.getMyProfile()
-  //     console.log(profileData)
-  //     setMyIts(profileData.itineraries)
-  //   }
-  //   fetchProfile()
-  // }, [])
+  
   
   const handleSubmit = async(e) => {
     e.preventDefault()

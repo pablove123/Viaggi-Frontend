@@ -18,7 +18,7 @@ function ItineraryList(props) {
         <h1>Itinerary List Page</h1>
         {props.myIts.map((itinerary)=>(
           //  <p key={itinerary._id}>{itinerary.name}</p>
-          <Link key={itinerary._id} to={`${itinerary._id}`} myIts={props.myIts}><p>{itinerary.name}</p></Link>
+          <Link key={itinerary._id} to={`/itinerary/${itinerary._id}`} myIts={props.myIts}><p>{itinerary.name}</p></Link>
         ))}
       </section>
     )

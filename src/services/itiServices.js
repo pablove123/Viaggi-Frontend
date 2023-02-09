@@ -33,7 +33,19 @@ const addToItinerary = async (itineraryId, experienceId) => {
   }
 }
 
+const show = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export{
   create,
-  addToItinerary
+  addToItinerary, 
+  show
 }

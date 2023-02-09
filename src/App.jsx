@@ -70,8 +70,8 @@ const addToFlorence = (experience) => {
       const profileData = await profileService.getMyProfile()
       setMyIts(profileData.itineraries)
     }
-    fetchProfile()
-  }, [])
+    if (user)fetchProfile()
+  }, [user])
 
   const expPhotoHelper = async (photo, id) => {
     const photoData = new FormData()
@@ -157,7 +157,7 @@ const addToFlorence = (experience) => {
           }
         />
           <Route
-        path="/itinerary/new/:itineraryDetails"
+        path="/itinerary/:itineraryId"
         element={
             <ProtectedRoute user={user}>
               <ItineraryDetails
