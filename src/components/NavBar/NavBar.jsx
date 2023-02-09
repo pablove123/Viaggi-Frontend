@@ -20,7 +20,7 @@ const NavBar = ({ user, handleLogout }) => {
       <li><NavLink className={styles.NavLink} to="/experiences/Venice">Venice</NavLink></li>
       <li><NavLink className={styles.NavLink} to="/experiences/Florence">Florence</NavLink></li>
       <li><NavLink className={styles.NavLink} to="/experiences/Rome">Rome</NavLink></li>
-      <li><NavLink className={styles.NavLink} to="/experiences/new">New Experience</NavLink></li>
+      <li><NavLink className={styles.NavLink} to="/experiences/new">Add Experience</NavLink></li>
       <li><NavLink className={styles.NavLink} to="/itinerary/new">New Itinerary</NavLink></li>
       <li>
         <NavLink className={styles.NavLink} to="/logout" onClick={handleLogout}>
