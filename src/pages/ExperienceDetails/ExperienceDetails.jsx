@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import styles from './ExperienceDetails.module.css'
-import AuthorInfo from "../../components/AuthorInfo/AuthorInfo";
 import NewReview from "../../components/NewReview/NewReview";
 import Reviews from "../../components/Reviews/Reviews";
 import * as expService from '../../services/expService'
 import * as itiService from '../../services/itiServices'
 
-const ExperienceDetails = (props) => {
+function ExperienceDetails(props) {
   const { id } = useParams()
   const [experience, setExperience] = useState(null)
   const [itineraryId, setItineraryId] = useState('')
@@ -73,11 +72,7 @@ const ExperienceDetails = (props) => {
         </div>
       </div>
       <div>
-        {experience.author.map((author)=>(
-        <AuthorInfo key={author._id} author={author}/>
-        ))}
         <div>
-        <AuthorInfo content={experience} />
           {experience.author[0]._id === props.user.profile &&
             <div className={styles.updateDelete}>
               <button className={styles.deleteButton} onClick={() => props.handleDeleteExperience(id)}>Delete</button>

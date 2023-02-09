@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import styles from './EditExperience.module.css'
 
-const EditExperience = (props) => {
+function EditExperience(props) {
   const { state } = useLocation()
   const [form, setForm] = useState(state)
 

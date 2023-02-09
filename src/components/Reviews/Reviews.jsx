@@ -1,6 +1,6 @@
 import ReviewCard from "../ReviewsCard/ReviewsCard"
 
-const Reviews = (props) => {
+function Reviews(props) {
   if (!props.review) return <h4>No Reviews Yet</h4>
 
   return (

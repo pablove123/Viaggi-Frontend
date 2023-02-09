@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from './NewExperience.module.css'
 
-const NewExperience = (props) => {
+function NewExperience(props) {
   const [form, setForm] = useState({
     name: '',
     city: 'Venice',
@@ -12,18 +12,18 @@ const NewExperience = (props) => {
 
   const [photo, setPhoto] = useState({})
 
-const handleChange = ({ target }) => {
-  setForm({ ...form, [target.name]: target.value })
-}
+  const handleChange = ({ target }) => {
+    setForm({ ...form, [target.name]: target.value })
+  }
 
-const handleSubmit = (e) => {
-  e.preventDefault()
-  props.handleAddExperience(form, photo.photo)
-}
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    props.handleAddExperience(form, photo.photo)
+  }
 
-const handleChangePhoto = (evt) => {
-  setPhoto({ photo: evt.target.files[0] })
-}
+  const handleChangePhoto = (evt) => {
+    setPhoto({ photo: evt.target.files[0] })
+  }
 
   return(
     <main className={styles.container}>

@@ -52,8 +52,8 @@ const update = async (experienceData) => {
   }
 }
 
-async function addPhoto(photoData, puppyId) {
-  const res = await fetch(`${BASE_URL}/${puppyId}/add-photo`, {
+const addPhoto = async (photoData, Id) => {
+  const res = await fetch(`${BASE_URL}/${Id}/add-photo`, {
     method: 'PUT',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
