@@ -27,9 +27,12 @@ const handleChangePhoto = (evt) => {
 
   return(
     <main className={styles.container}>
+      <header className={styles.header}>
+        Add a New Experience
+      </header>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name-input">Name: </label>
+          <label htmlFor="name-input">Name </label>
           <input
           required
           type="text"
@@ -41,7 +44,7 @@ const handleChangePhoto = (evt) => {
           />
         </div>
         <div>
-          <label htmlFor="city-input">City: </label>
+          <label htmlFor="city-input">City </label>
           <select
             required
             name="city"
@@ -55,7 +58,7 @@ const handleChangePhoto = (evt) => {
           </select>
         </div>
         <div>
-          <label htmlFor="category-input">Category: </label>
+          <label htmlFor="category-input">Category </label>
           <select
             required
             name="category"
@@ -71,7 +74,7 @@ const handleChangePhoto = (evt) => {
           </select>
         </div>
         <div>
-          <label htmlFor="photo-upload">Upload Photo: </label>
+          <label htmlFor="photo-upload">Upload Photo </label>
           <input
             type="file"
             className="form-control"
@@ -81,7 +84,7 @@ const handleChangePhoto = (evt) => {
           />
         </div>
         <div className={styles.descriptionText}>
-          <label htmlFor="description-input">Description:</label>
+          <label htmlFor="description-input">Description</label>
           <textarea
           required
           className={styles.textArea}
