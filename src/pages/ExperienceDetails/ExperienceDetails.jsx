@@ -91,7 +91,7 @@ const ExperienceDetails = (props) => {
         </div>
       </div>
       <div className={styles.leaveReview}>
-        <h1>Reviews</h1>
+        <h1>Add Your Review</h1>
         <NewReview handleAddReview={handleAddReview}/>
       </div>
       <Reviews user={props.user} review={experience.review} />
