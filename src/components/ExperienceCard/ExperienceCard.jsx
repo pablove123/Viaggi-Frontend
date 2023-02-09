@@ -8,10 +8,10 @@ const ExperienceCard = (props) => {
 
     const isVenice = (
         <button onClick={() => props.addToVenice(props.experience)}>Add to Itinerary</button>
-      )
+    )
     const isRome = (
         <button onClick={() => props.addToRome(props.experience)}>Add to Itinerary</button>
-      )
+    )
     const isFlorence = (
         <button onClick={() => props.addToFlorence(props.experience)}>Add to Itinerary</button>
     )
