@@ -20,27 +20,22 @@ function ItineraryDetails(props) {
   useEffect(()=>{
     const fetchItinerary = async () =>{
       const itinerariesData = await itiService.show(itineraryId)
-      console.log("Data",itinerariesData)
       setItinerary(itinerariesData)
     }
     fetchItinerary()
   }, [itineraryId])
-  if(!itinerary) return <div className="spinner">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  </div>
+  if(!itinerary) return <h1>Loading...</h1>
 
   return (
-    <section>
-      <h1>{itinerary.name}</h1>
-      <h1>{itinerary.createdAt}</h1>
-      {itinerary.experiences.map((experience)=>(
-        <ExperienceCard key={experience._id}experience={experience}/>
-      ))}
+    <section className={styles.container}>
+      <header>
+        <h1>{itinerary.name}</h1> 
+      </header>
+      <div>
+        {itinerary.experiences.map((experience)=>(
+          <ExperienceCard key={experience._id}experience={experience}/>
+        ))}
+      </div>
     
       
     </section>
