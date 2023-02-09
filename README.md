@@ -1,6 +1,6 @@
 # Viaggi
 ![alt text](./src/assets/images/readme1.png)
-## [OPEN SITE HERE](https://viagi.netlify.app)
+## [OPEN SITE HERE](https://viagggi.netlify.app/)
 
 ### Welcome to Viaggi! Create your perfect vacation by adding user created experiences into your very own itinerary!
 
@@ -26,6 +26,7 @@
 - Adobe Photoshop
 - Adobe Illustrator
 - Font Awesome
+- DK Travel 
 
 
 #### Ice Box 🧊
@@ -38,3 +39,4 @@
 
 
 ##### [Planning materials](https://trello.com/b/FvL3FGa1/unit-3)
+##### [Backend Github](https://github.com/pablove123/Viaggi-backend)
