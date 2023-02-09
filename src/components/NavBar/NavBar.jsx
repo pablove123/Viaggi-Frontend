@@ -10,6 +10,9 @@ const NavBar = ({ user, handleLogout }) => {
 // background: transparent;
   const publicLinks = (
     <ul>
+      <li><NavLink className={styles.NavLink} to="/experiences/Venice">Venice</NavLink></li>
+      <li><NavLink className={styles.NavLink} to="/experiences/Florence">Florence</NavLink></li>
+      <li><NavLink className={styles.NavLink} to="/experiences/Rome">Rome</NavLink></li>
       <li><NavLink to="/login">LOG IN</NavLink></li>
       <li><NavLink to="/signup">SIGN UP</NavLink></li>
     </ul>
@@ -27,9 +30,6 @@ const NavBar = ({ user, handleLogout }) => {
           <FontAwesomeIcon icon={faArrowRightFromBracket} size='lg' />
         </NavLink>
       </li>
-      {/* <li><NavLink to="/experiences">All Experiences</NavLink></li> */}
-      {/* <li><NavLink to="/change-password">Change Password</NavLink></li> */}
-      {/* <li><NavLink to="/profiles">Profiles</NavLink></li> */}
     </ul>
   )
 

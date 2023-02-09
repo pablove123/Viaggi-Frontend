@@ -41,8 +41,6 @@ const ExperienceDetails = (props) => {
   const availableIts = props.myIts.filter((it) => {
     return !it.experiences.includes(experience._id)
   }) 
-  console.log("THIS IS PROPS DOT USE<<<<<",props.user.profile);
-  console.log("THIS IS AUTHOR<<<<", experience.author[0]._id);
 
   return (
     <main className={styles.container}>
