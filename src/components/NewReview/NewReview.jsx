@@ -42,7 +42,7 @@ const NewReview = (props) => {
           <option value="4">4</option>
           <option value="5">5</option>
         </select>
-      <button type="submit"><Icon category="Create" /></button>
+      <button type="submit">Submit Review</button>
     </form>
   )
 }

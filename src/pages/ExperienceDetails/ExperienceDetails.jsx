@@ -67,7 +67,7 @@ const ExperienceDetails = (props) => {
                 <option  key={it._id} value={it._id}>{it.name}</option>
               ))}
             </select>
-            <button type="submit">
+            <button className={styles.addToItinerary} type="submit">
               Add to Itinerary
             </button>
           </form>
@@ -90,9 +90,11 @@ const ExperienceDetails = (props) => {
           {/* } */}
         </div>
       </div>
-      <h1>Reviews</h1>
-      <NewReview handleAddReview={handleAddReview}/>
-      <Reviews review={experience.review} user={props.user} />
+      <div className={styles.leaveReview}>
+        <h1>Reviews</h1>
+        <NewReview handleAddReview={handleAddReview}/>
+      </div>
+      <Reviews user={props.user} review={experience.review} />
     </main>
   )
 }

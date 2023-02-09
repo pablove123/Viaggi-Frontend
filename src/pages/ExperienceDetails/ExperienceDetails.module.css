@@ -3,6 +3,51 @@
   flex-direction: column;
 }
 
+.container input { 
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+  resize: vertical;
+  border-radius: 5px;
+  margin: 7px 0px 14px 0px;
+  border: 1px solid var(--border);
+  font-family: canada-type-gibson, sans-serif;
+}
+
+.container textarea { 
+  background-color: white;
+  width: 80%;
+  padding: 14px;
+  font-size: 14px;
+  resize: vertical;
+  border-radius: 5px;
+  margin: 7px 0px 14px 0px;
+  border: 1px solid var(--border);
+  font-family: canada-type-gibson, sans-serif;
+}
+
+.container select { 
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+  resize: vertical;
+  border-radius: 5px;
+  margin: 7px 0px 14px 0px;
+  border: 1px solid var(--border);
+  font-family: canada-type-gibson, sans-serif;
+}
+
+.addToItinerary { 
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+  resize: vertical;
+  border-radius: 5px;
+  margin: 7px 0px 14px 0px;
+  border: 1px solid var(--border);
+  font-family: canada-type-gibson, sans-serif;
+}
+
 .header {
   margin-top: 20px;
 }
@@ -59,13 +104,13 @@
   text-decoration: underline;
 }
 
-.container input, textarea, select, button { 
-  width: 100%;
-  padding: 14px;
-  font-size: 14px;
-  resize: vertical;
-  border-radius: 5px;
-  margin: 7px 0px 14px 0px;
-  border: 1px solid var(--border);
-  font-family: canada-type-gibson, sans-serif;
+.leaveReview {
+  margin-top: 50px;
+  background-color: whitesmoke;
+  max-width: 600px;
+  border-radius: 10px;
+  padding: 20px 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
