@@ -27,6 +27,9 @@ const handleChangePhoto = (evt) => {
 
   return(
     <main className={styles.container}>
+      <header className={styles.header}>
+        <h1>Add A New Experience</h1>
+      </header>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name-input">Name: </label>

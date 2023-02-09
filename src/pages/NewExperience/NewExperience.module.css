@@ -25,3 +25,9 @@
   border: 1px solid var(--border);
   font-family: canada-type-gibson, sans-serif;
 }
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
