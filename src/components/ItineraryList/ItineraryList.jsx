@@ -4,7 +4,6 @@ import { useEffect } from "react"
 
 function ItineraryList(props) {
   const { id } = useParams()
-  console.log("this is props", props)
 
   // useEffect(() => {
   //   const fetchExperience = async () => {
@@ -19,7 +18,7 @@ function ItineraryList(props) {
         <h1>Itinerary List Page</h1>
         {props.myIts.map((itinerary)=>(
           //  <p key={itinerary._id}>{itinerary.name}</p>
-          <Link to={`${itinerary._id}`} myIts={props.myIts}><p key={itinerary._id}>{itinerary.name}</p></Link>
+          <Link key={itinerary._id} to={`${itinerary._id}`} myIts={props.myIts}><p>{itinerary.name}</p></Link>
         ))}
       </section>
     )
