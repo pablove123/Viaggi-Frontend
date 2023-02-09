@@ -25,7 +25,7 @@ const ExperienceDetails = (props) => {
 
   const handleAddReview = async (reviewData) => {
     const newReview = await expService.createReview(id, reviewData)
-    setExperience({...experience, review: [...experience.review, newReview] })
+    setExperience({...experience, review: [newReview, ...experience.review] })
   }
 
   const handleAddToItinerary = async (e) => {
