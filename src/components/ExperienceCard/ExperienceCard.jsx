@@ -6,7 +6,7 @@ function ExperienceCard(props) {
 
   return (
     <>
-      <Link to={`/experience/${props.experience._id}`}>
+      <Link className={styles.Link} to={`/experience/${props.experience._id}`}>
         <article className={styles.experienceCardContainer}>
           <img src={props.experience.photo} alt="experience"/>
           <div className={styles.nameIcon}>
