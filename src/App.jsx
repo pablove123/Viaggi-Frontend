@@ -23,7 +23,7 @@ import * as profileService from "./services/profileService"
 // styles
 import './App.css'
 import NewExperience from './pages/NewExperience/NewExperience'
-import NewItinerary from './pages/Itinerary/NewItinerary'
+import NewItinerary from './pages/NewItinerary/NewItinerary'
 import ExperienceDetails from './pages/ExperienceDetails/ExperienceDetails'
 import ItineraryDetails from './pages/ItineraryDetails/ItineraryDetails'
 
