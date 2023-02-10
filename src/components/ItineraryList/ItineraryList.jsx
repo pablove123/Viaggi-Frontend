@@ -5,10 +5,18 @@ function ItineraryList(props) {
   
     return (
       <section className={styles.container}>
-        <h1>My Itineraries</h1>
+        <header className={styles.header}>
+          <h1>My Itineraries</h1>
+        </header>
+        <div className={styles.itineraryContainer}>
         {props.myIts.map((itinerary)=>(
-          <Link key={itinerary._id} to={`/itinerary/${itinerary._id}`} myIts={props.myIts}><p>{itinerary.name}</p></Link>
+          <Link  className={styles.Link} key={itinerary._id} to={`/itinerary/${itinerary._id}`} myIts={props.myIts}>
+            <div className={styles.itineraryContainerCard}>
+              <h1>{itinerary.name}</h1>
+            </div>
+          </Link>
         ))}
+        </div>
       </section>
     )
   }

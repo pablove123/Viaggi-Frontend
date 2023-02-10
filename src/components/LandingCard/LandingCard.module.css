@@ -5,10 +5,15 @@
   object-fit: cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 15px;
   border: 1px solid gray;
   background-color: whitesmoke;
+  min-height: 300px;
+}
+
+.cardContainer > img {
+  height: 200px;
 }
 
 .cardTextDiv {
@@ -21,3 +26,9 @@
   text-decoration: none;
   color: black;
 }
+
+/* .imageDiv {
+  height: 140px;
+  overflow: hidden;
+  object-fit: contain;
+} */
