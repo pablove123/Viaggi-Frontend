@@ -1,3 +1,44 @@
+
 .container {
-  /* display: flex; */
+  height: 100%;
+  width: 95%;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.itineraryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.itineraryContainerCard {
+  margin: 20px;
+  height: 100px;
+  width: 200px;
+  object-fit: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  /* border: 1px solid gray; */
+  background-color: white;
+  color: brown;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.itineraryContainerCard:hover {
+  box-shadow: brown 0px 5px 15px;
+}
+
+.Link {
+  text-decoration: none;
+}
+
+.header {
+  margin-left: 20px;
 }
